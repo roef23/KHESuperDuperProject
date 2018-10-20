@@ -36,7 +36,7 @@ int main() {
                " \\______  /__|\\____/ \\_/  (____  /___|  /___|  /__/____  >  \\____|__  (____  /___|  /____  >__|\\____/|___|  / \n"
                "        \\/                     \\/     \\/     \\/        \\/           \\/     \\/     \\/     \\/               \\/  "
             << std::endl;
-
+    //TODO 1 for figher 2 for mage 3 for random
     cout << endl;
     cout << "Press 1 to continue" << endl;
 
@@ -56,14 +56,39 @@ int main() {
     }
 //cout << "This will print if the game continues";
 //creates the array that hold all the events
-    string eventArray[5] =
+    string eventArray[6] =
             {
                     "YOU FOUND A CHEST", //if(Event = 1-5, cout "Will you open?"
                     "YOU ARE ATTACKED BY AN ENEMY", //if (Event = 6-10, cout "Will you fight?"
                     "HEAL UP",
                     "ITEM PICK UP", //Strength determined by door and room level
+                    "TRAP ROOM", //get hurt
                     "TODO Nothing is boring and boring is bad"
             };
+    int player[3] =
+            {
+            100, //Health
+            10, //Physical damage
+            10 //Magic damage TODO
+            };
+
+    string monsterArray[14][3] =
+            {{"Ghost",                                              "5", "5"},
+             {"Goblins",                                            "5", "5"},
+             {"Armor Knights",                                      "5", "5"},
+             {"Zombie",                                             "5", "5"},
+             {"Vampire",                                            "5", "5"},
+             {"Ghost of Stonewall Jackson",                         "5", "5"},
+             {"Ghost of David Baraona",                             "5", "5"},
+             {"That crazy ex of yours",                             "5", "5"},
+             {"Zack and Cody from the Suite Life of Zack and Cody", "5", "5"},
+             {"Cory from Cory in the House",                        "5", "5"},
+             {"Lois Griffin or just anyone from Family Guy",        "5", "5"},
+             {"Marge Simpson",                                      "5", "5"},
+             {"Bernie Sanders",                                     "5", "5"},
+             {"The Burger King mascot",                             "5", "5"}};
+
+
 //TODO code the actual game engine!
 //Code for random numbers. Getting it from current time, genius!
     srand(time(0));
@@ -89,28 +114,28 @@ int main() {
             cin >> userPathChoice;
         }
         if (userPathChoice == "left") {
-            randomArrayChoice = rand() % 5;
+            randomArrayChoice = rand() % 6;
             if (rerollCalculation(eventCounter, randomArrayChoice, roomNum) == "1") {
                 if (repeatRoom == false) {
                     repeatRoom = !repeatRoom;
                 }
                 cout << "Repeat event \n";
             } else {
-                cout << eventArray[rand() % 5] + "\n";
+                cout << eventArray[rand() % 6] + "\n";
                 roomNum++;
                 cout << "Room number ";
                 cout << roomNum << endl;
             }
         }
         if (userPathChoice == "right") {
-            randomArrayChoice = rand() % 5;
+            randomArrayChoice = rand() % 6;
             if (rerollCalculation(eventCounter, randomArrayChoice, roomNum) == "1") {
                 if (repeatRoom == false) {
                     repeatRoom = !repeatRoom;
                 }
                 cout << "Repeat event \n";
             } else {
-                cout << eventArray[rand() % 5] + "\n";
+                cout << eventArray[rand() % 6] + "\n";
                 roomNum++;
                 cout << "Room number ";
                 cout << roomNum << endl;
@@ -118,14 +143,14 @@ int main() {
 
         }
         if (userPathChoice == "middle") {
-            randomArrayChoice = rand() % 5;
+            randomArrayChoice = rand() % 6;
             if (rerollCalculation(eventCounter, randomArrayChoice, roomNum) == "1") {
                 if (repeatRoom == false) {
                     repeatRoom = !repeatRoom;
                 }
                 cout << "Repeat event \n";
             } else {
-                cout << eventArray[rand() % 5] + "\n";
+                cout << eventArray[rand() % 6] + "\n";
                 roomNum++;
                 cout << "Room number ";
                 cout << roomNum << endl;
@@ -134,7 +159,7 @@ int main() {
 
         if (userPathChoice != "left"
             && userPathChoice != "right"
-            && userPathChoice != "center"
+            && userPathChoice != "middle"
                 ) {
             cout << "Wrong input" << endl;
         }
