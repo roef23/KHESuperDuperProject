@@ -21,11 +21,22 @@ while (true) {
         //cout << "TODO";
         break;
     } else {
-        cout << "Read the directions, asshole";
-        exit(0);
+
+        cout << "Read the directions, asshole" << std::endl;
+        cin >> startGame;
+       // exit(0);
     }
 
 }
 cout << "This will print if the game continues";
+//creates the array that hold all the events
+string eventArray[5] =
+        {
+                "YOU FOUND A CHEST", //if(Event = 1-5, cout "Will you open?"
+                "YOU ARE ATTACKED BY AN ENEMY", //if (Event = 6-10, cout "Will you fight?"
+                "HEAL UP",
+                "ITEM PICK UP", //Strength 
+
+        };
     return 0;
 }
