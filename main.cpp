@@ -46,10 +46,49 @@ string eventArray[5] =
 //Code for random numbers. Getting it from current time, genius!
 srand(time(0));
 
+//counters for the room number and event handles
+int roomNum = 1;
+int eventCounter[5] ={
+        0,//0 CHEST COUNTER
+        0,//1 COMBAT COUNTER
+        0,//2 HEAL COUNTER
+        0,//3 ITEM DROP COUNTER
+        0 //4 REROLL COUNTER
+};
+int randomArrayChoice;
+//TODO FIX THE REROLL CALCULATION AND CLEAN THIS UP
 while (true) {
-    cout <<
-    cout << eventArray[rand() % 5];
+    cout << "What door are you using?";
 
-}
+    string userPathChoice;
+    cin >>  userPathChoice;
+    if (userPathChoice == "left")
+        {
+
+            randomArrayChoice = rand() % 5;
+            cout << eventArray[randomArrayChoice] + "\n";
+            if (eventCounter[randomArrayChoice] / roomNum > rand() % 100)
+            {
+                cout << "TODO REROLL";
+            }
+            roomNum++;
+
+        } else if (userPathChoice == "right")
+        {
+            cout << eventArray[rand() % 5] + "\n";
+        }
+        else if (userPathChoice == "middle")
+        {
+            cout << eventArray[rand() % 5] + "\n";
+
+        } else {
+        printf ("Wrong door \n");
+
+    }
+if (userPathChoice == "close")
+    break;
+    }
     return 0;
 }
+
+
