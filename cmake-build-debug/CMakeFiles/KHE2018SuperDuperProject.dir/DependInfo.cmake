@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/RyanA/CLionProjects/KHE2018SuperDuperProject/main.cpp" "C:/Users/RyanA/CLionProjects/KHE2018SuperDuperProject/cmake-build-debug/CMakeFiles/KHE2018SuperDuperProject.dir/main.cpp.obj"
+  "/Users/davidbaraona/Desktop/KHESuperDuperProject/main.cpp" "/Users/davidbaraona/Desktop/KHESuperDuperProject/cmake-build-debug/CMakeFiles/KHE2018SuperDuperProject.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
