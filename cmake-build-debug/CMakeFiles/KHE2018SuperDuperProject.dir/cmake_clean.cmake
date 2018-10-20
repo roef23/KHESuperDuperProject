@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/KHE2018SuperDuperProject.dir/main.cpp.o"
+  "CMakeFiles/KHE2018SuperDuperProject.dir/main.cpp.obj"
   "KHE2018SuperDuperProject.pdb"
-  "KHE2018SuperDuperProject"
+  "KHE2018SuperDuperProject.exe"
+  "KHE2018SuperDuperProject.exe.manifest"
+  "libKHE2018SuperDuperProject.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
