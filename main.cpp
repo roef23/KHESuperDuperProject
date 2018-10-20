@@ -1,5 +1,9 @@
 #include <iostream>
 #include <string>
+#include <random>
+#include <cstdlib>
+#include <ctime>
+
 using std::cout; using std::cin; using std::endl; using std::string;
 
 int main() {
@@ -28,15 +32,24 @@ while (true) {
     }
 
 }
-cout << "This will print if the game continues";
+//cout << "This will print if the game continues";
 //creates the array that hold all the events
 string eventArray[5] =
         {
                 "YOU FOUND A CHEST", //if(Event = 1-5, cout "Will you open?"
                 "YOU ARE ATTACKED BY AN ENEMY", //if (Event = 6-10, cout "Will you fight?"
                 "HEAL UP",
-                "ITEM PICK UP", //Strength 
-
+                "ITEM PICK UP", //Strength determined by door and room level
+                "TODO Nothing is boring and boring is bad"
         };
+//TODO code the actual game engine!
+//Code for random numbers. Getting it from current time, genius!
+srand(time(0));
+
+while (true) {
+    cout <<
+    cout << eventArray[rand() % 5];
+
+}
     return 0;
 }
