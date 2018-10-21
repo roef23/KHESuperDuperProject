@@ -4,13 +4,26 @@
 #include <cstdlib>
 #include <ctime>
 
+
 using std::cout; using std::cin; using std::endl; using std::string;
+
+bool contin(string s)
+{
+    if (s == "1")
+    {
+        return true;
+    }
+    if (s == "2")
+    {
+        return false;
+    }
+}
 
 int rng(int n) {
     int max = n;
 
     int num = rand() % max;
-    cout << num << endl;
+   // cout << num << endl;
     return num;
 
 }
@@ -102,59 +115,77 @@ int main() {
             0,//3 ITEM DROP COUNTER
             0 //4 REROLL COUNTER
     };
+    string monsterSpawner;
+    int monsterName;
     int roomNum = 1;
     int randomArrayChoice;
     bool repeatRoom = false;
     string userPathChoice;
+    string continCONST = "1";
 //TODO FIX THE REROLL CALCULATION AND CLEAN THIS UP
     while (true) {
 
-        if (!repeatRoom) {
+        if (contin("1")) {
             cout << "What door are you using?";
             cin >> userPathChoice;
         }
         if (userPathChoice == "left") {
+
             randomArrayChoice = rand() % 6;
-            if (rerollCalculation(eventCounter, randomArrayChoice, roomNum) == "1") {
-                if (repeatRoom == false) {
-                    repeatRoom = !repeatRoom;
+            //if (rerollCalculation(eventCounter, randomArrayChoice, roomNum) == "1") {
+                //if (repeatRoom == false) { //duplicate event handler
+                    //repeatRoom = !repeatRoom;
+               // }
+             //  continCONST = "2";
+           //     cout << "Repeat event \n";
+
+           // } else {
+          //      continCONST = "1";
+                cout << eventArray[randomArrayChoice] << endl;
+                if (eventArray[randomArrayChoice] == eventArray[1]) //Combat starter
+                {
+                    monsterName = rng(14);
+                    monsterSpawner = monsterArray[monsterName][0];
+                    cout << monsterSpawner << endl;
+
                 }
-                cout << "Repeat event \n";
-            } else {
-                cout << eventArray[rand() % 6] + "\n";
                 roomNum++;
                 cout << "Room number ";
                 cout << roomNum << endl;
-            }
+            //}
         }
         if (userPathChoice == "right") {
             randomArrayChoice = rand() % 6;
-            if (rerollCalculation(eventCounter, randomArrayChoice, roomNum) == "1") {
-                if (repeatRoom == false) {
-                    repeatRoom = !repeatRoom;
-                }
-                cout << "Repeat event \n";
-            } else {
-                cout << eventArray[rand() % 6] + "\n";
-                roomNum++;
-                cout << "Room number ";
-                cout << roomNum << endl;
+
+            cout << eventArray[randomArrayChoice] << endl;
+            if (eventArray[randomArrayChoice] == eventArray[1]) //Combat starter
+            {
+                monsterName = rng(14);
+                monsterSpawner = monsterArray[monsterName][0];
+                cout << monsterSpawner << endl;
+
             }
+            roomNum++;
+            cout << "Room number ";
+            cout << roomNum << endl;
+            //}
 
         }
         if (userPathChoice == "middle") {
             randomArrayChoice = rand() % 6;
-            if (rerollCalculation(eventCounter, randomArrayChoice, roomNum) == "1") {
-                if (repeatRoom == false) {
-                    repeatRoom = !repeatRoom;
-                }
-                cout << "Repeat event \n";
-            } else {
-                cout << eventArray[rand() % 6] + "\n";
-                roomNum++;
-                cout << "Room number ";
-                cout << roomNum << endl;
+
+            cout << eventArray[randomArrayChoice] << endl;
+            if (eventArray[randomArrayChoice] == eventArray[1]) //Combat starter
+            {
+                monsterName = rng(14);
+                monsterSpawner = monsterArray[monsterName][0];
+                cout << monsterSpawner << endl;
+
             }
+            roomNum++;
+            cout << "Room number ";
+            cout << roomNum << endl;
+            //}
         }
 
         if (userPathChoice != "left"
