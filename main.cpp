@@ -28,7 +28,12 @@ int rng(int n) {
 
 }
 
-string rerollCalculation(int eventCounter[5], int randomArrayChoice, int roomNumber) {
+string combat(int playerLocal[3], string monsterName, string monsterArrayLocal[14][3])
+{
+
+}
+
+string rerollCalculation(int eventCounter[5], int randomArrayChoice, int roomNumber) { //useless dogshit
     //int currentEvent = randomArrayChoice;
     if (eventCounter[randomArrayChoice] / roomNumber > rng(101)) {
         return "1";
@@ -84,22 +89,41 @@ int main() {
             10, //Physical damage
             10 //Magic damage TODO
             };
-
+    string combatPhrases[17]
+            {
+                    "Oh no! A",
+                    "Oh, CRAP! IT'S A",
+                    "It’s a wild",
+                    "Run for your life! It's",
+                    "It's coming....It's",
+                    "Jesus Christ it's Jason Bourne! Just kidding it's",
+                    "It's ya boy",
+                    "Wow! An epic battle with",
+                    "An epic showdown is about to commence Between our hero and",
+                    "Is that a new Pokemon? It's",
+                    "Who's that Pokemon? It's",
+                    "Let's get this bread! You're fighting",
+                    "That's one ugly",
+                    "It's not Chuck Norris, but it's",
+                    "Oh why do you have to fight",
+                    "Oh thank god, it's only",
+                    "Peace, love, a"
+            };
     string monsterArray[14][3] =
-            {{"Ghost",                                              "5", "5"},
-             {"Goblins",                                            "5", "5"},
-             {"Armor Knights",                                      "5", "5"},
-             {"Zombie",                                             "5", "5"},
-             {"Vampire",                                            "5", "5"},
-             {"Ghost of Stonewall Jackson",                         "5", "5"},
-             {"Ghost of David Baraona",                             "5", "5"},
+            {{"a Ghost",                                              "5", "5"},
+             {"a Goblin",                                            "5", "5"},
+             {"an Armor Knight",                                      "5", "5"},
+             {"a Zombie",                                             "5", "5"},
+             {"a Vampire",                                            "5", "5"},
+             {"the Ghost of Stonewall Jackson",                         "5", "5"},
+             {"the Ghost of David Baraona",                             "5", "5"},
              {"That crazy ex of yours",                             "5", "5"},
              {"Zack and Cody from the Suite Life of Zack and Cody", "5", "5"},
              {"Cory from Cory in the House",                        "5", "5"},
-             {"Lois Griffin or just anyone from Family Guy",        "5", "5"},
+             {"a My Name Jeff Vine Compilation",        "5", "5"},
              {"Marge Simpson",                                      "5", "5"},
              {"Bernie Sanders",                                     "5", "5"},
-             {"The Burger King mascot",                             "5", "5"}};
+             {"The Burger King Mascot",                             "5", "5"}};
 
 
 //TODO code the actual game engine!
@@ -141,13 +165,16 @@ int main() {
 
            // } else {
           //      continCONST = "1";
-                cout << eventArray[randomArrayChoice] << endl;
+
                 if (eventArray[randomArrayChoice] == eventArray[1]) //Combat starter
                 {
                     monsterName = rng(14);
                     monsterSpawner = monsterArray[monsterName][0];
                     cout << monsterSpawner << endl;
 
+                } else
+                {
+                    cout << eventArray[randomArrayChoice] << endl;
                 }
                 roomNum++;
                 cout << "Room number ";
@@ -162,7 +189,11 @@ int main() {
             {
                 monsterName = rng(14);
                 monsterSpawner = monsterArray[monsterName][0];
+                cout << combatPhrases[rng(18)];
+                cout << " ";
                 cout << monsterSpawner << endl;
+                combat(player, monsterSpawner, monsterArray);
+
 
             }
             roomNum++;
