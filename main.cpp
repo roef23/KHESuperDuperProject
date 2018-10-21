@@ -156,30 +156,24 @@ int main() {
         if (userPathChoice == "left") {
 
             randomArrayChoice = rand() % 6;
-            //if (rerollCalculation(eventCounter, randomArrayChoice, roomNum) == "1") {
-                //if (repeatRoom == false) { //duplicate event handler
-                    //repeatRoom = !repeatRoom;
-               // }
-             //  continCONST = "2";
-           //     cout << "Repeat event \n";
 
-           // } else {
-          //      continCONST = "1";
+            cout << eventArray[randomArrayChoice] << endl;
+            if (eventArray[randomArrayChoice] == eventArray[1]) //Combat starter
+            {
+                monsterName = rng(14);
+                monsterSpawner = monsterArray[monsterName][0];
+                cout << combatPhrases[rng(18)];
+                cout << " ";
+                cout << monsterSpawner << endl;
+                combat(player, monsterSpawner, monsterArray);
 
-                if (eventArray[randomArrayChoice] == eventArray[1]) //Combat starter
-                {
-                    monsterName = rng(14);
-                    monsterSpawner = monsterArray[monsterName][0];
-                    cout << monsterSpawner << endl;
 
-                } else
-                {
-                    cout << eventArray[randomArrayChoice] << endl;
-                }
-                roomNum++;
-                cout << "Room number ";
-                cout << roomNum << endl;
+            }
+            roomNum++;
+            cout << "Room number ";
+            cout << roomNum << endl;
             //}
+
         }
         if (userPathChoice == "right") {
             randomArrayChoice = rand() % 6;
@@ -210,13 +204,18 @@ int main() {
             {
                 monsterName = rng(14);
                 monsterSpawner = monsterArray[monsterName][0];
+                cout << combatPhrases[rng(18)];
+                cout << " ";
                 cout << monsterSpawner << endl;
+                combat(player, monsterSpawner, monsterArray);
+
 
             }
             roomNum++;
             cout << "Room number ";
             cout << roomNum << endl;
             //}
+
         }
 
         if (userPathChoice != "left"
